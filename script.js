@@ -276,11 +276,6 @@ if (localStorage.getItem("arrowGameHighScores")) {
   }
   updateHighScore();
 }
-window.addEventListener("load", function () {
-  localStorage.removeItem("arrowGameHighScores");
-  highScores = { 30: 0, 45: 0, 60: 0 };
-  updateHighScore();
-});
 
 resetGameUI();
 
