@@ -15,6 +15,20 @@ let gameActive = false;
 let gameStarted = false;
 let selectedTime = 30;
 
+// Load high scores from localStorage if available
+if (localStorage.getItem("arrowGameHighScores")) {
+  try {
+    const loadedScores = JSON.parse(
+      localStorage.getItem("arrowGameHighScores")
+    );
+    if (loadedScores && typeof loadedScores === "object") {
+      highScores = { ...highScores, ...loadedScores };
+    }
+  } catch {
+    highScores = { 30: 0, 45: 0, 60: 0 };
+  }
+}
+
 function showRandomArrow() {
   if (!gameStarted && window.nextArrowForStart) {
     currentArrow = window.nextArrowForStart;
