@@ -80,10 +80,10 @@ function endGame(resetOnly = false) {
   clearInterval(timerInterval);
   timeLeft = selectedTime;
   if (!resetOnly) {
-    document.getElementById("final-score").style.display = "block";
-    document.getElementById(
-      "final-score"
-    ).textContent = `Game Over! Your final score: ${score}`;
+    // document.getElementById("final-score").style.display = "block";
+    // document.getElementById(
+    //   "final-score"
+    // ).textContent = `Game Over! Your final score: ${score}`;
   } else {
     document.getElementById("final-score").style.display = "none";
   }
